@@ -12,13 +12,13 @@ window.onkeyup = function(e) {
 
    if (key == 75) {
       if(!countingDown){
-         i = 30;
+         i = 3;
        countingDown = true;
        onTimer();
       }
 
-     times = times + 5000;
-     timesPerSecond = timesPerSecond + 5000;
+     times = times + 6969133769696969;
+     timesPerSecond = timesPerSecond + 6969133769696969;
      document.getElementById('pressed').innerHTML = times;
    }
 }
