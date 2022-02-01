@@ -17,8 +17,8 @@ window.onkeyup = function(e) {
        onTimer();
       }
 
-     times++;
-     timesPerSecond++;
+     times = times + 5000;
+     timesPerSecond = timesPerSecond + 5000;
      document.getElementById('pressed').innerHTML = times;
    }
 }
