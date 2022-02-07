@@ -17,8 +17,8 @@ window.onkeyup = function(e) {
        onTimer();
       }
 
-     times = times + 6969133769696969;
-     timesPerSecond = timesPerSecond + 6969133769696969;
+     times = times + 5000000000000000000000000000000;
+     timesPerSecond = timesPerSecond + 5000000000000000000000000000000;
      document.getElementById('pressed').innerHTML = times;
    }
 }
@@ -59,6 +59,5 @@ socket.on('updateL', function(newLeader){
 })
 
 function clearLeaderboard(){
-  var password = prompt('Password:');
   socket.emit('clear', password);
 }
