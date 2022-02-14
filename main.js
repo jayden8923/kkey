@@ -1,19 +1,18 @@
 var timesPerSecond = 0;
 var rate = 0;
-var i = 30;
-var times= 0;
+var times = 0;
+var time = document.getElementById('settime');
+var settime = toNumber(time.value);
 var socket = io('https://kkey-leaderboard.herokuapp.com/');
 var countingDown = false;
 var myVar = setInterval(checkRate, 1000);
 var leaderboard = [];
+var i;
 
 window.onkeyup = function(e) {
    var key = e.keyCode ? e.keyCode : e.which;
 
    if (key == 75) {
-      if(!countingDown){
-         i = 3;
-       countingDown = true;
        onTimer();
       }
 
@@ -24,16 +23,14 @@ window.onkeyup = function(e) {
 }
 
 function onTimer() {
-  document.getElementById('mycounter').innerHTML = i;
-  i--;
-  if (i < 0) {
+  document.getElementById('mycounter').innerHTML = settime;
+  settime--;
+  if (settime < 0) {
     alert('TIME UP');
     socket.emit('score',{player: prompt('What is your name?'), score: times})
     countingDown = false;
     times = 0;
-  }
-  else if(countingDown){
-    setTimeout(onTimer, 1000);
+     time.value = 30;
   }
 }
 
