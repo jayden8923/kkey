@@ -12,7 +12,7 @@ var i;
 window.onkeyup = function(e) {
    var key = e.keyCode ? e.keyCode : e.which;
 
-   if (key == 75) {
+   if (key == 75 && countingDown) {
        onTimer();
       }
 
@@ -24,6 +24,7 @@ window.onkeyup = function(e) {
 
 function onTimer() {
   document.getElementById('mycounter').innerHTML = settime;
+   countingDown = true;
   settime--;
   if (settime < 0) {
     alert('TIME UP');
