@@ -10,7 +10,7 @@ window.onkeyup = function(e) {
     var key = e.keyCode ? e.keyCode : e.which;
     if (key == 75) {
         if (!countingDown) {
-            i = document.getElementById('rate').innerHTML;
+            i = parseInt(document.getElementById('settime').innerHTML);
             countingDown = true;
             onTimer();
         }
@@ -31,12 +31,12 @@ function onTimer() {
         }) countingDown = false;
         times = 0;
     } else if (countingDown) {
-        setTimeout(onTimer, parseInt(`${document.getElementById('rate').innerHTML}000`));
+        setTimeout(onTimer, parseInt(`${document.getElementById('settime').innerHTML}000`));
     }
 }
 
 function checkRate() {
-    rate = document.getElementById('rate').innerHTML;
+    document.getElementById('rate') = rate;
     timesPerSecond = 0;
 } //socket stuff 
 socket.on('connected', function () { console.log('Successfully connected to server.'); }); 
