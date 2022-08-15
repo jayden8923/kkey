@@ -31,7 +31,7 @@ function onTimer() {
         }) countingDown = false;
         times = 0;
     } else if (countingDown) {
-        setTimeout(onTimer, parseInt(`${document.getElementById('settime').innerHTML}000`));
+        setTimeout(onTimer, 1000);
     }
 }
 
