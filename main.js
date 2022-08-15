@@ -10,7 +10,7 @@ window.onkeyup = function(e) {
     var key = e.keyCode ? e.keyCode : e.which;
     if (key == 75) {
         if (!countingDown) {
-            i = 3;
+            i = document.getElementById('rate').innerHTML;
             countingDown = true;
             onTimer();
         }
@@ -36,8 +36,7 @@ function onTimer() {
 }
 
 function checkRate() {
-    rate = timesPerSecond;
-    document.getElementById('rate').innerHTML = rate;
+    rate = document.getElementById('rate').innerHTML;
     timesPerSecond = 0;
 } //socket stuff 
 socket.on('connected', function () { console.log('Successfully connected to server.'); }); 
