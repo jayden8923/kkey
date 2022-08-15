@@ -31,7 +31,7 @@ function onTimer() {
         }) countingDown = false;
         times = 0;
     } else if (countingDown) {
-        setTimeout(onTimer, 1000);
+        setTimeout(onTimer, parseInt(`${document.getElementById('rate').innerHTML}000`));
     }
 }
 
