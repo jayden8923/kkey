@@ -42,5 +42,4 @@ function checkRate() {
 } //socket stuff 
 socket.on('connected', function () { console.log('Successfully connected to server.'); }); 
 socket.on('updateL', function(newLeader){ leaderboard = newLeader; console.log(leaderboard); var string = '' for(var i = 0; i<leaderboard.length; i++){ string = string + "#" + eval(i+1) + " " + leaderboard[i].player + ": " + leaderboard[i].score + "<br>"; }
- document.getElementById('leaderboard').innerHTML = '<strong>Leaderboard:</strong><br>' + string; }) 
-function clearLeaderboard(){ socket.emit('clear', password); } 
+ document.getElementById('leaderboard').innerHTML = '<strong>Leaderboard:</strong><br>' + string; })
